@@ -17,10 +17,14 @@ import speech_recognition as sr
 from io import BytesIO
 import urllib
 
+import socket
 
 
 
-base_url = "http://34.125.54.7//test_py.php?test="
+
+
+
+base_url = "http://34.148.185.194//test_py.php?test="
 url = sys.argv[-1].strip() if validators.url(sys.argv[-1].strip()) else base_url
 
 # Routine to send the information to the prim
@@ -38,7 +42,7 @@ def submitInformation(url,parameters) :
 
 def send_simworld(url='', query='', response='', speaker=''):
     # Set the URL manually
-    url = 'http://hydra.cs.fsu.edu:9000/lslhttp/06f078ec-70be-4752-b669-c8640a6748ed/'
+    url = 'http://hydra.cs.fsu.edu:9000/lslhttp/29952139-c66c-4cdb-b59d-ab40ab1518a1/'
     # Define the parameters
     parameters = {'query': query,
                   'response': response,
@@ -47,6 +51,9 @@ def send_simworld(url='', query='', response='', speaker=''):
     # Pass the information along to the prim
     info = submitInformation(url,parameters);
     #print(info);
+    
+def send_ficil(url='', query='', response='', speaker=''):
+    pass
 
 def send_receive_text(query): 
   full_query = url + query
