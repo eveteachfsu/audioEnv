@@ -18,6 +18,7 @@ from io import BytesIO
 import urllib
 
 import socket
+#import pyttsx3 as p
 
 
 
@@ -42,7 +43,7 @@ def submitInformation(url,parameters) :
 
 def send_simworld(url='', query='', response='', speaker=''):
     # Set the URL manually
-    url = 'http://hydra.cs.fsu.edu:9000/lslhttp/29952139-c66c-4cdb-b59d-ab40ab1518a1/'
+    url = 'http://hydra.cs.fsu.edu:9000/lslhttp/cd012072-da91-4d24-9848-443c52c5e297/'
     # Define the parameters
     parameters = {'query': query,
                   'response': response,
@@ -59,6 +60,7 @@ def send_receive_text(query):
   full_query = url + query
   response = requests.get(full_query)
   print("BOT SAID : {}".format(response.content.decode().split('_')[0]))
+  #p.speak("{}".format(response.content.decode().split('_')[0]))
   send_simworld(query=query, response=response.content.decode().split('_')[0], speaker='Student_1')
 
 def audio_text():
